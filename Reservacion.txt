@@ -1,0 +1,205 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="estilos.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+var device = navigator.userAgent
+
+if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)|| device.match(/J2ME/i)|| device.match(/BlackBerry/i)|| device.match(/iPhone|iPad|iPod/i)|| device.match(/Opera Mini/i)|| device.match(/IEMobile/i)|| device.match(/Mobile/i)|| device.match(/Windows Phone/i)|| device.match(/windows mobile/i)|| device.match(/windows ce/i)|| device.match(/webOS/i)|| device.match(/palm/i)|| device.match(/bada/i)|| device.match(/series60/i)|| device.match(/nokia/i)|| device.match(/symbian/i)|| device.match(/HTC/i))
+{
+window.location = "movil/m.Principal.php";
+
+}
+else
+{
+
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registro</title>
+
+</head>
+<body>
+<div class="CONT" align="center" >
+
+   
+
+    <div>
+
+        <div id ="Cabecera">
+
+            <div id="ContenidoCabecera">
+                <div id="BarraArriba">
+                    <ul>
+                          <li> <a href="Principal.php"> Inicio </a></li>
+                        <li> <a href="R.php"> Registro </a></li>
+                         <li> <a href="Reservacion.php"> Reservación </a></li>
+                        <li> <a href="AcercaDe.php"> AcercaDe </a></li>
+								<li> <a href="loggin.php"> loggin </a></li>
+						<li> <a href="salir.php"> salir </a></li>
+                    </ul>
+                </div>
+                <div id="Logotipo">                   
+
+                    <img src="Imagenes/logo3.png" alt="logo" style="height:54px; width:244px;"/>
+
+                </div>
+                <div id="Titulo">
+                    <h1>Solicitud Para Reservacion de Canchas</h1>
+                    <h2>Temas</h2>
+                </div>
+
+            </div>
+
+        <div id ="Bajo">
+            <div id ="ColumnaIzquierda">
+                
+    <ul id="MenuContextual">
+        <li> <a href="Registro_alm.php">Registro de Usuario </a> </li>
+        
+    </ul>
+
+            </div>
+            <div id="ColumnaCentro">
+                
+    
+   <!-- ------------------- -->
+   
+	  <fieldset class="contact">
+	  <form action="Registro_alm.php" method="post">
+                        <legend>Formulario de registro</legend>
+                        <ol>
+                            <li>
+                              Nombre de usuario<br>
+							  <input type="" id="NombreDeUsuario" placeholder="Nimbre De Usuario" name="NombreDeUsuario">
+                            </li>
+						     <li>
+							
+                             Contraseña<br>
+                             <input type="password" id="Password"  placeholder="contraseña" name="Password"> 
+							</li>  
+                             <li>
+                                Numero de Cuenta<br>
+                                <input type="text" id="NCuenta" placeholder="Numero de cuenta" name="NCuenta">
+                                
+                            </li>							
+                            <li>
+                                Seleccione Carrera<br>
+								<select name="Carrera" id="Carrera" placeholder=""> 
+								<option value="Seleecione su carrera">Seleecione su carrera</option>
+							                                                      
+								<option value="Infomatica">Informatica</option>
+								<option value="Mercadotecnia">Mercadotecnia</option>
+                                <option value="Derecho">Derecho</option>
+                                </select>
+                                <!--<input type="text" id="Carrera" placeholder="nformatica" name="Carrera">-->
+                                
+                            </li>
+							<li>
+							
+                            Correo Electronico<br>
+                            <input type="text" id="Email" placeholder="Email" name="Email">@unitec.edu
+                                
+                            </li>
+     
+                           
+						  
+							
+                        </ol>
+						<input type="submit" value="Registrarce">
+                        </form>
+						<div id="msj">........</div>
+                    </fieldset>
+
+   
+   <!-- --------------------- -->
+
+            </div>
+            <div id="ColumnaDerecha">
+
+                <div id="ImagenLogo">
+                    
+                </div>
+
+                <div id="Enlaces">
+                  </div><div><?php echo "".$_SESSION['cuenta'];?></div>
+                </div>
+            </div>
+            <div id="Pie">
+                <span> &copy; 2014 - Solicitud para reservación de canchas del polideportivo</span>             
+
+            </div>
+        </div>
+    </div>
+        </div>
+
+    
+	
+	
+	</div>
+	
+	
+	
+
+
+<!-- Inicio php insert -->
+<?php 
+$conexion=mysql_connect("db4free.net","ceutec","ceutec") or
+ die("Problemas en la conexion");
+mysql_select_db("ceutec",$conexion) or
+  die("Problemas en la selección de la base de datos");
+  echo "< script>alert('ok');</script>";
+  
+  if("" != $_REQUEST[Carrera] and $_REQUEST[NombreDeUsuario] != "" and $_REQUEST[Password] !="" and $_REQUEST[NCuenta]!="" and $_REQUEST[Email]!="" ){
+
+  $numeroAleatorio = rand(0,10000);
+  $registros=mysql_query("insert into temp(nombret,contrat,numerocuentat,carrerat,correot,num) values ('$_REQUEST[NombreDeUsuario]','$_REQUEST[Password]','$_REQUEST[NCuenta]','$_REQUEST[Carrera]','$_REQUEST[Email]',$numeroAleatorio)",$conexion) or
+  die("Problemas Registrando datos en temp:".mysql_error());
+  #punciona ;) 3 hora en eto
+  
+  /*INICIAMOS EL CODIGO PHP*/
+$header="From: AREA DEPORTIVA:<$_REQUEST[Email]>\n";
+/*CREAMOS UN HEADER DONDE DEFINIMOS EL REMITENTE DEL CORREO,
+ESTO LO ASIGNAMOS A LA VARIABLE $header*/
+$header.="MIME-Version: 1.0\n";
+$header.="Content-type: text/html; charset=iso-8859-1";
+/*CONTINUAMOS EL HEADER (NOTESE EL ".=" EN VEZ DE SOLO "="),
+DEFINIDIENDO AHORA, QUE EL CORREO SE ENVIARA EN FORMATO HTML.
+ESTO TAMBIEN LO ASIGNAMOS A LA VARIABLE $header*/
+$msj="Para verificar su correo ingresar a:
+      <br><a href='http://appletenhtml.comule.com/polideportivo/verificar.php'>Verificando</a>
+	  <br>Introducir numero de cuenta y este numero:".$numeroAleatorio;
+//$msj.="<br><a href='www.comolohago.cl'>Click</a>";
+/*CREAMOS EL MENSAJE (NOTESE NUEVAMENTE EL ".=") QUE IRA EN EL CORREO
+Y LO ASIGNAMOS A LA VARIABLE $msj*/
+$dest=$_REQUEST[Email]."@unitec.edu";
+/*ASIGNAMOS A LA VARIABLE $dest EL CORREO AL QUE ENVIAREMOS EL CORREO
+LAS PRUEBAS DEBEN HACERSE CON UN CORREO REAL*/
+$asunto="Confirmacion de registro";
+/* EN LA VARIABLE $asunto GUARDAMOS EL ASUNTO DEL MENSAJE*/
+mail($dest,$asunto,$msj,$header);
+/*EJECUTAMOS LA FUNCION COMO TAL, EL ORDEN ES IMPORTANTE ASI QUE SE DEBE MANTENER,
+USAMOS LAS VARIABLES QUE ASIGNAMOS ANTERIORMENTE*/
+//echo "Mensake enviado";
+  
+  echo '<script> var a=$("#msj");a.html("Se le a enviado un menaje de<br>verificacion revise su correo.");</script>';
+  echo '<script> alert("Se le a enviado un menaje de<br>verificacion revise su correo.");</script>';
+  } else {
+  //echo "Error";
+  echo '<script> var a=$("#msj");a.html("NOTA:Introducir todos los datos.");</script>';
+  echo '<script>alert("NOTA:Introducir todos los datos.");</script>';
+ // echo '<script>var a=getElementById("msj");a.InnerHtml("Nick "'.$_REQUEST[Carrera].'" ya esta en uso");</script>';
+  }
+
+  
+  
+  
+  
+  
+mysql_close($conexion);
+  
+  ?>
+<!-- Fin php insert -->
+</body>
+</html>

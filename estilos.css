@@ -1,0 +1,376 @@
+﻿body {
+}
+/*originalllllllll*/
+#Cabecera 
+{
+    height: 150px;
+	width: 960px;
+   background-color: #002457;
+    color:white;
+    border:1px dashed #002457;
+    box-shadow:0px 0px 5px #000;
+    position:relative;
+    z-index:2;
+}
+#CONT{}
+#ContenidoCabecera 
+{
+    width:960px;
+    margin:auto;
+}
+
+#BarraArriba 
+{
+    height:40px;
+    background-color:#C2141B;
+    border-radius:0px 0px 10px 10px;
+    box-shadow:0px 0px 10px #000 inset;
+    text-align:center;
+}
+
+    #BarraArriba > ul 
+    {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+    }
+
+    #BarraArriba li 
+    {
+        display:inline-block;
+        padding:5px;
+        cursor:pointer;
+        background-color: #002457;
+        color:#3c6daa;
+        box-shadow:0px 0px 5px #000 inset;
+        border-radius:20px 20px 20px 20px;
+        margin-top:5px;
+    }
+
+        #BarraArriba li > a 
+        {
+            display:block;
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+#Logotipo 
+{
+    width:40%;
+    float:left;
+    text-align:center;
+    margin-top:30px;        
+}
+
+
+#Titulo 
+{
+    width:60%;
+    float:left;
+	text-align: left;
+    text-shadow: 2px 2px 3px #000;
+}
+
+    #Titulo > h1 
+    {
+        margin-top:12px;
+		
+    }
+
+    #Titulo > h2 
+    {
+        margin-bottom:14px;
+    }
+
+#Bajo 
+{
+    width:960px;
+    margin:auto;
+    background-color:#C2141B;
+    border-radius:0px 0px 20px 20px;
+    overflow:auto;
+    box-shadow:0px 0px 10px #000;
+}
+
+#ColumnaIzquierda, #ColumnaDerecha
+{
+    float:left;
+    width:20%;
+    min-height:700px;
+    border-radius:0px 0px 10px 10px;
+    /*box-shadow:0px 0px 10px #000 inset;*/
+}
+#ImagenLogo 
+{
+   text-align:center;
+   margin-top:543px;
+}
+
+#ImagenLogo2 
+{
+   text-align:center;
+   margin-top:760px;
+}
+#MenuContextual 
+{
+    list-style-type:none;
+    padding:0;
+    margin:50px 0;
+}
+
+    #MenuContextual > li 
+    {
+        padding:10px;
+        text-align:center;
+        background-color:#d3d3d3;
+        border:1px outset #C2141B;
+        box-shadow:0px 0px 10px #000 inset;
+        color: black;
+        border-radius:20px 20px 20px 20px;
+        margin:5px;
+    }
+
+        #MenuContextual > li > a 
+        {
+            text-decoration:none;
+            color:#000000;
+        }
+
+#ColumnaCentro 
+{
+    float:left;
+	text-align: left;
+    width:60%;
+    min-height:700px;
+    background-color:white;
+    color:#000000;
+    box-shadow:0px 0px 5px #000 inset;
+}
+
+/*news sta il li*/
+#ColumnaCentro > ul > li > h2
+{
+list-style-type: none;
+color:#C41319;
+
+}
+
+#ColumnaCentro > ul > li > h3
+{list-style-type: none;
+color:#006699;
+
+}
+ul, li { list-style-type: none; }
+
+
+#Pie 
+{
+  
+    background-color:#002457;
+    border-radius:0px 0px 20px 20px;
+    clear:both;
+    box-shadow:0px 0px 5px #000 inset;
+    color:white;
+    text-align:center;
+    padding-top:5px;
+}
+
+#Pie a:visited {
+	color: blue;
+	text-decoration: none;
+}
+
+//..........................
+
+a {
+    color: #333;/*333*/
+    outline: none;
+    text-decoration: underline;
+}
+
+
+
+//-------------------------------------------------11111111111111111111111111------------------
+
+
+    fieldset ol {
+        padding: 0;
+        list-style: none;
+    }
+
+        fieldset ol li {
+            padding-bottom: 5px;
+			list-style:none;
+        }
+
+    label {
+        display: block;
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+
+    label.checkbox {
+        display: inline;
+    }
+
+	/*aqui tipo letra form*/
+    input, textarea,select {
+        border: 1px solid #e2e2e2;
+        background: #fff;
+        color: #333;
+        /*font-size: 1.2em;*/
+        margin: 5px 0 6px 0;
+        padding: 5px;
+        width: 207px;
+    }
+
+    textarea {
+        font-family: inherit;
+        width: 500px;
+    }/*aqui esta el tipo de letra form*/
+    
+        input:focus, textarea:focus {
+            border: 1px solid #7ac0da;
+        }
+
+        input[type="checkbox"] {
+            background: transparent;
+            border: inherit;
+            width: auto;
+        }
+        
+    input[type="submit"],
+    input[type="button"],
+    button {
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        /*font-size: 1.2em;*/
+        font-weight: 600;
+        padding: 7px;
+        margin-right: 8px;
+        width: auto;
+    }
+
+    td input[type="submit"],
+    td input[type="button"],
+    td button {
+        font-size: 1em;
+        padding: 4px;
+        margin-right: 4px;
+    }
+
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+'// .......................................................
+
+#login {
+        font-size: .85em;
+        margin: 0 0 12px;
+        text-align:right;
+    }
+
+        #login ul {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        #login li {
+            display: inline;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #login a {
+            background: none;
+            color: #fff;
+            font-weight: 600;
+            margin: 2px;
+            padding: 0;
+        }
+    
+	
+	/* -------------- */
+		 
+/* contact */
+.contact {
+    margin: 2px 1px 1px 25px;
+}
+.contact h1{color:#C41319;}
+.contact h3 {
+    font-size: 1.2em;
+	color:#006699;
+}
+
+.contact p {
+    margin: 2px 1px 1px 1px;
+}
+
+.label {
+    font-weight: 136;
+}
+
+/*tabla torneo*/
+/*Diseño tablas*/
+ /*Diseño tablas*/
+table { 
+  margin: -10px 0 30px 0;
+  float: left;
+}
+
+
+table tr th, table tr td { 
+  background: #555;/*555*/
+  color: #FFF;
+  padding: -700px 400px;
+  text-align: left;
+  text-shadow: none;
+  
+}
+
+
+table input[type=text],table select {
+        border: 1px solid #e2e2e2;
+        background: #fff;
+        color: #333;
+        font-size: 0.7em;
+        margin: 0px 0 0px 0;
+        padding: -5px;
+        /*new*/
+		width: 138px;
+	 
+	 
+}
+table tr td { 
+  background: #DDD;
+  color: #47433F;
+  border-top: 1px solid #FFF;
+}
+/*new*/
+#tb2 input[type=text] {
+        border: 1px solid #e2e2e2;
+        background: #fff;
+        color: #333;
+        font-size: 0.7em;
+        margin: 0px -10px 0px -2px;
+        padding: -15px;
+        width: 67px;
+	 
+	 
+}
+/*new*/
+#msj {color: red;}
+
+/*fin tablas*/
+
+/*fin tablas*/
+/*fin taba toreo*/
